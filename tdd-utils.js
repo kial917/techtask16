@@ -1,8 +1,14 @@
-const add = (a, b) => {
-    isNaN(a) ? a = -2 : a;
-    let c = Number(a) + Number(b);
-    return isNaN(c) ? c = 0 : c;
+const normalize = (num) => {
+    if (num === undefined) {
+        return 0
+    }
+    if (isNaN(num)) {
+        return -2;
+    }
+    return Number(num);
 };
+const add = (a, b) => normalize(a) + normalize(b);
+
 
 /*
     Измените функцию add таким образом, чтобы
@@ -13,6 +19,7 @@ console.log(add(1, '2') === 3);
 console.log(add('1', 3) === 4);
 console.log(add('2', '2') === 4);
 console.log(add(NaN, 2) === 0);
+console.log(add(2, NaN) === 0);
 console.log(add('', 2) === 2);
 console.log(add() === 0);
 console.log(add(true, true) === 2);
