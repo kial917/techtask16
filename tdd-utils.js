@@ -127,7 +127,7 @@ const arr = [{
     },
 ].map((film) => ({
     rating: film.rating,
-    cost: (parseInt(film.rating, 10) >= 92) ? (film.cost = film.cost * 2) : film.cost,
+    cost: (parseInt(film.rating, 10) >= 92) ? (film.cost * 2) : film.cost,
     name: film.name,
 }));
 
